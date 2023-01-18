@@ -1,0 +1,7 @@
+*.bdsproj
+*.local
+*.cfg
+*.exe
+
+*.~1~
+*.~2~

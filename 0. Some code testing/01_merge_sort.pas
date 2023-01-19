@@ -2,7 +2,7 @@ program merge_sort;
 {$APPTYPE CONSOLE}
 
 uses
-  SysUtils;
+	SysUtils;
 
 function test_sort(input_array: array of real) : Boolean;
 var
@@ -27,7 +27,7 @@ begin
 	size_input := Length(input_array);
 	//writeln(size_input);
 	
-	if size_input <> 1 then	begin
+	if size_input > 1 then	begin
 		size_left := size_input div 2;
 		size_right := size_input - size_left;
 		

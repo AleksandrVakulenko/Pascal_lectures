@@ -29,6 +29,18 @@ function array_inc(arg : Int_D) : Ptr_to_Int_D;
 		array_inc := @local_arr;
 	end;
 	
+
+function array_inc_2(arg : Int_D) : Int_D;
+	var
+		local_arr : Int_D;
+		i : integer;
+	begin
+		setlength(local_arr, Length(arg));
+		for i:=0 to high(arg) do begin
+			local_arr[i] := arg[i]+1;
+		end;
+		array_inc_2 := local_arr;
+	end;
 	
 var
 	arr : Int_D;
@@ -37,7 +49,6 @@ var
 	i : integer;
 
 begin
-	Malloc(11);
 	array_init;
 	randomize;
 	setlength(arr, 10);
@@ -47,11 +58,11 @@ begin
 		writeln(arr[i]);
 	end;
 
-	ptr := array_inc(arr);
+	arr := array_inc_2(arr);
 	
 	writeln;
-	for i:=0 to high(ptr^) do begin
-		writeln(ptr^[i]);
+	for i:=0 to high(arr) do begin
+		writeln(arr[i]);
 	end;
 
 	arr := nil;

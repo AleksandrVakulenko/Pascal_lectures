@@ -56,6 +56,7 @@ procedure print_list(intro : Node_p);
 	
 var
 	intro : Node_p;
+	
 begin
 
 	intro := nil;

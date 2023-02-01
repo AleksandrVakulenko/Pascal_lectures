@@ -2,12 +2,11 @@
 *.local
 *.cfg
 *.exe
-
 *.~1~
 *.~2~
 
 
-
+*~$*.docx
 *~$*.pptx
 
 /0. Closed test

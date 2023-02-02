@@ -13,7 +13,6 @@ begin
 
 	i := 3;
 	
-	
 	writeln('Size of Extended: ', sizeof(D));
 	
 	write('Size of Single: ');
@@ -25,14 +24,5 @@ begin
 	
 	writeln(i);
 	
-
+	readln; //if you run it from IDE
 end.
-
-
-
-
-
-
-
-
-

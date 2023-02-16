@@ -2,7 +2,7 @@ program test;
 {$APPTYPE CONSOLE}
 
 uses
-	SysUtils;
+	SysUtils, Math;
 
 type
 	long_value = array of byte;
@@ -43,7 +43,7 @@ procedure trim_long_value(var arr : long_value);
 		i : integer;
 	begin
 		i := high(arr);
-		while (arr[i] = 0) and (i >= 0) do
+		while (i >= 0) and (arr[i] = 0) do
 			i := i - 1;
 		setlength(arr, i+1);
 	end;
@@ -84,7 +84,7 @@ function long_sum(A, B : long_value) : long_value;
 
 
 function shift_left(arr : long_value; i : word) : long_value;
-	var 
+	var
 		output : long_value;
 		j : integer;
 	begin
@@ -143,7 +143,7 @@ var
 
 begin
 // main
-{
+//{
 write('N = ');
 readln(N);
 
@@ -159,7 +159,7 @@ print(output);
 
 
 // test
-// { 
+ { 
 	writeln;
 	writeln('create by it a, b');
 	a := create_by_int(10002);

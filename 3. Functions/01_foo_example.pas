@@ -4,7 +4,6 @@ program foo_test;
 uses
 	SysUtils;
 
-
 var
 	val_g : real;
 

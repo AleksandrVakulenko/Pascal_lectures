@@ -43,7 +43,7 @@ procedure trim_long_value(var arr : long_value);
 		i : integer;
 	begin
 		i := high(arr);
-		while (arr[i] = 0) and (i >= 0) do //FIXME: wrong order
+		while (arr[i] = 0) and (i >= 0) do
 			i := i - 1;
 		setlength(arr, i+1);
 	end;
@@ -55,7 +55,7 @@ function long_sum_notrim(A, B : long_value) : long_value;
 		carry :  byte;
 		i : integer;
 	begin
-		setlength(output, length(A) + length(B)); //FIXME: wrong length
+		setlength(output, max(length(A), length(B)) + 1);
 		setlength(A, length(output));
 		setlength(B, length(output));
 		
@@ -143,14 +143,14 @@ var
 
 begin
 // main
-//{
+{
 write('N = ');
 readln(N);
 
 one := create_by_int(1);
 output := one;
 for i:=1 to N do begin
-	writeln(i/N*100:6:2, '%');
+	//writeln(i/N*100:6:2, '%');
 	next := long_sum(next, one);
 	output := long_mult(output, next);
 end;
@@ -159,7 +159,7 @@ print(output);
 
 
 // test
- { 
+// { 
 	writeln;
 	writeln('create by it a, b');
 	a := create_by_int(10002);

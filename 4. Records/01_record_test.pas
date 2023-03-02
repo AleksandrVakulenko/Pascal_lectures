@@ -28,9 +28,9 @@ var
 	A, B : VEC3;
 begin
 	A := create_vec3(1, 2, 3);
-	B := create_vec3(1, 1, 2);
+	B := create_vec3(1, 1, 2000000);
 	
-	writeln(dot_product(A, B):5:3);
+	writeln(dot_product(A, B):0:3);
 end.
 
 

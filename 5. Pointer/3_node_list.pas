@@ -21,12 +21,16 @@ procedure set_size(var arg:arr_of_node; i : integer);
 	end;
 	
 var
-	a : Node;
+	a, b : Node;
 	arr : arr_of_node;
     
 begin
 	a.ptr := nil;
 	a.data := 11;
+	
+	b.ptr := nil;
+	b.data := -5;
+	
     set_size(arr, 4);
 
 end.

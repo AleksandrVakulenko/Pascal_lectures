@@ -9,7 +9,7 @@ var
     rp : ^real;
     i : int64;
     ip : ^int64;
-    
+	
 begin
     r := 24.51;
     rp := @r;
@@ -25,8 +25,8 @@ begin
 	writeln(format('Address: %p', [ip]));
 	writeln(format('Address: %p', [rp]));
 	
-    //ip := @r;
-    //writeln(ip^);
+    ip := @r;
+    writeln(ip^);
 	
 	//writeln(sizeof(i));
 	//writeln(sizeof(ip));

@@ -7,8 +7,8 @@ uses
 var
     r : real;
     rp : ^real;
-    i : integer;
-    ip : ^integer;
+    i : int64;
+    ip : ^int64;
     
 begin
     r := 24.51;
@@ -22,9 +22,17 @@ begin
     writeln(ip^);
     writeln;    
     
+	writeln(format('Address: %p', [ip]));
+	writeln(format('Address: %p', [rp]));
+	
     //ip := @r;
     //writeln(ip^);
-    
+	
+	//writeln(sizeof(i));
+	//writeln(sizeof(ip));
+	//writeln(sizeof(r));
+	//writeln(sizeof(rp));
+	
     //ip := nil;
     //writeln(ip^);
     

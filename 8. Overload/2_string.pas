@@ -21,11 +21,16 @@ begin
     writeln(str3);
     
     r := 12.234253;
-    str3 := format('Value of r = %.3f', [r]);
+    str3 := format('Value of r = %.3f; %.4f', [r, 2.0]);
     writeln(str3);
     
-    str(r, str1);
-    writeln(str1);
+    str(r, str2);
+    writeln(str2);
+	
+	for i := 1 to length(str1) do begin
+		writeln(str1[i]);
+	end;
+	//writeln;
 end.
 
 

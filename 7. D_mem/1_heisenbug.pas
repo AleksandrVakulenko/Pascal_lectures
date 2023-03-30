@@ -11,18 +11,15 @@ procedure foo();
         writeln('jj = ', jj);
     end;
 
-
-var 
-    i, number : integer; 
- 
+var
+    i, N : integer; 
 begin
-number := 10000;
+N := 1000;
 i := 0;
 repeat 
     i := i + 1;
     foo;
-until number < i;
-    
-    
-    //writeln(format('Address: %p', [@i]));
+until N < i;
+  
+//writeln(format('Address: %p', [@i]));
 end.

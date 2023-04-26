@@ -67,11 +67,11 @@ procedure foo();
     
 Type
 	cat_p = ^Cat;
-
+	
 var
     c, c2 : Cat;
     ptr_c : cat_p;
-
+	
 Begin
     
     foo;
@@ -92,6 +92,7 @@ Begin
 	writeln(ptr_c^.get_data);
 	dispose(ptr_c, del);
 	
+
 End.
 
 

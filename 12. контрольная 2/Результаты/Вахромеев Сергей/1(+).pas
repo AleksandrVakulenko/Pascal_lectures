@@ -1,0 +1,75 @@
+﻿program vec_obj;
+{$APPTYPE CONSOLE}
+uses
+  SysUtils, Math;
+type
+  vec3 = object;
+  private
+    x, y, z: real;
+  public
+    constructor create(ax, ay, az: real);
+    constructor copy(arg_r: vec3);
+    constructor zero();
+    function sum(arg_r: vec3): vec3;
+    function dot_product(arg_r: vec3): real;
+    function length(): real;
+    function cross_product(arg_r: vec3): vec3;
+    procedure print_value();
+  end;
+constructor vec3.create(ax, ay, az: real);
+begin
+  x := ax;
+  y := ay;
+  z := az;
+end;
+constructor vec3.copy(arg_r: vec3);
+begin
+  x := arg_r.x;
+  y := arg_r.y;
+  z := arg_r.z;
+end;
+constructor vec3.zero();
+begin
+  x := 0;
+  y := 0;
+  z := 0;
+end;
+function vec3.sum(arg_r: vec3): vec3;
+begin
+  sum.x := x + arg_r.x;
+  sum.y := y + arg_r.y;
+  sum.z := z + arg_r.z;
+end;
+function vec3.dot_product(arg_r: vec3): real;
+begin
+  dot_product := x * arg_r.x + y * arg_r.y + z * arg_r.z;
+end;
+function vec3.length(): real;
+begin
+  length := sqrt(x * x + y * y + z * z);
+end;
+function vec3.cross_product(arg_r: vec3): vec3;
+begin
+  cross_product.x := y * arg_r.z - z * arg_r.y;
+  cross_product.y := z * arg_r.x - x * arg_r.z;
+  cross_product.z := x * arg_r.y - y * arg_r.x;
+end;
+procedure vec3.print_value();
+begin
+  writeln('(', x: 0: 2, ',', y: 0: 2, ',', z: 0: 2, ')');
+end;
+var
+  a, b, c: vec3;
+begin
+  a.create(1, 2, 3);
+  a.print_value;
+  b.create(1, 1, 10);
+  b.print_value;
+  c := b.sum(a);
+  c.print_value;
+  writeln(a.dot_product(b): 0: 3);
+  writeln(b.length(): 0: 3);
+  c := a.cross_product(b);
+  c.print_value;
+  writeln('OK!')
+end.
